@@ -36,4 +36,4 @@ Route::get('/login/login','Login\LoginController@login');
 Route::post('/login/add_register','Login\LoginController@add_register');
 Route::post('/login/add_login','Login\LoginController@add_login');
 
-Route::get('/index/index','index\IndexController@index');
+Route::get('/index/index','Index\IndexController@index');
