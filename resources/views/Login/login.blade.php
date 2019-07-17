@@ -1,58 +1,6 @@
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<meta charset="UTF-8">
-	<title>Mstore - Online Shop Mobile Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-touch-fullscreen" content="yes">
-	<meta name="HandheldFriendly" content="True">
-
-	<link rel="stylesheet" href="{{asset('/index/css/materialize.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/font-awesome/css/font-awesome.min.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/css/normalize.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/css/owl.carousel.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/css/owl.theme.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/css/owl.transitions.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/css/fakeLoader.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/css/animate.css')}}">
-	<link rel="stylesheet" href="{{asset('/index/css/style.css')}}">
-	
-	<link rel="shortcut icon" href="{{asset('/index/img/favicon.png')}}">
-
-</head>
-<body>
-
-	<!-- navbar top -->
-	<div class="navbar-top">
-		<!-- site brand	 -->
-		<div class="site-brand">
-			<a href="index.html"><h1>Mstore</h1></a>
-		</div>
-		<!-- end site brand	 -->
-		<div class="side-nav-panel-right">
-			<a href="#" data-activates="slide-out-right" class="side-nav-left"><i class="fa fa-user"></i></a>
-		</div>
-	</div>
-	<!-- end navbar top -->
-
-	<!-- side nav right-->
-	<div class="side-nav-panel-right">
-		<ul id="slide-out-right" class="side-nav side-nav-panel collapsible">
-			<li class="profil">
-				<img src="{{asset('/index/img/profile.jpg')}}" alt="">
-				<h2>John Doe</h2>
-			</li>
-			<li><a href="setting.html"><i class="fa fa-cog"></i>Settings</a></li>
-			<li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
-			<li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
-			<li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
-			<li><a href="{{url('login/register')}}"><i class="fa fa-user-plus"></i>Register</a></li>
-		</ul>
-	</div>
-	<!-- end side nav right-->
-
+  @extends('layouts.shop')
+  @section('title','')
+  @section('content')
 	<!-- navbar bottom -->
 	<div class="navbar-bottom">
 		<div class="row">
@@ -235,7 +183,7 @@
 						</a>
 					</div>
 					<div class="col s4">
-						<a href="{{url('login/register')}}" class="button-link">
+						<a href="register.html" class="button-link">
 							<div class="menu-link">
 								<div class="icon">
 									<i class="fa fa-user-plus"></i>
@@ -262,7 +210,7 @@
 						<div class="cart-1">
 							<div class="row">
 								<div class="col s5">
-									<img src="{{asset('/index/img/cart-menu1.png')}}" alt="">
+									<img src="img/cart-menu1.png" alt="">
 								</div>
 								<div class="col s7">
 									<h5><a href="">Fashion Men's</a></h5>
@@ -297,7 +245,7 @@
 						<div class="cart-2">
 							<div class="row">
 								<div class="col s5">
-									<img src="{{asset('/index/img/cart-menu2.png')}}" alt="">
+									<img src="img/cart-menu2.png" alt="">
 								</div>
 								<div class="col s7">
 									<h5><a href="">Fashion Men's</a></h5>
@@ -371,16 +319,18 @@
 			</div>
 			<div class="login">
 				<div class="row">
-					<form class="col s12" action="{{url('login/add_login')}}" method="post">
-						{{ csrf_field() }}
-						<div class="input-field" >
-							<input type="text" class="validate" name="name" placeholder="USERNAME" required>
+					<form class="col s12" action="/login/logindo" method="post">
+						{{csrf_field()}}
+						<meta name="csrf-token" content="{{ csrf_token() }}">
+                        @csrf
+						<div class="input-field">
+							<input type="text" class="validate" placeholder="请输入用户名"  name="name" id='name' required>
 						</div>
 						<div class="input-field">
-							<input type="password" class="validate" name="password" placeholder="PASSWORD" required>
+							<input type="password" class="validate" placeholder="请输入密码" id='pwd' name="pwd" required>
 						</div>
 						<a href=""><h6>忘记密码</h6></a>
-						<input type="submit" value='登录' class="btn button-default">
+						<button class="btn button-default">登录</button>
 					</form>
 				</div>
 			</div>
@@ -391,35 +341,41 @@
 	<!-- loader -->
 	<div id="fakeLoader"></div>
 	<!-- end loader -->
+	@endsection
 	
-	<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<div class="about-us-foot">
-				<h6>Mstore</h6>
-				<p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
-			</div>
-			<div class="social-media">
-				<a href=""><i class="fa fa-facebook"></i></a>
-				<a href=""><i class="fa fa-twitter"></i></a>
-				<a href=""><i class="fa fa-google"></i></a>
-				<a href=""><i class="fa fa-linkedin"></i></a>
-				<a href=""><i class="fa fa-instagram"></i></a>
-			</div>
-			<div class="copyright">
-				<span>© 2017 All Right Reserved</span>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
-	
-	<!-- scripts -->
-	<script src="{{asset('/index/js/jquery.min.js')}}"></script>
-	<script src="{{asset('/index/js/materialize.min.js')}}"></script>
-	<script src="{{asset('/index/js/owl.carousel.min.js')}}"></script>
-	<script src="{{asset('/index/js/fakeLoader.min.js')}}"></script>
-	<script src="{{asset('/index/js/animatedModal.min.js')}}"></script>
-	<script src="{{asset('/index/js/main.js')}}"></script>
+  {{--<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>	--}}
 
-</body>
-</html>
+  {{--<script type="text/javascript">--}}
+  {{--$(function(){--}}
+    {{--$('.button-default').click(function(){--}}
+      {{--// alert(0);--}}
+      {{--var name=$('#name').val();--}}
+     {{----}}
+      {{--var pwd=$('#pwd').val();--}}
+      {{----}}
+      {{--// alert(pwd);--}}
+      {{----}}
+    {{----}}
+      {{--$.ajaxSetup({--}}
+       {{--headers: {--}}
+       {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+       {{--}--}}
+      {{--});--}}
+
+
+         {{----}}
+       {{--$.post(--}}
+            {{--'logindo',--}}
+            {{--{name:name,pwd:pwd},--}}
+            {{--function(res){--}}
+              {{--// console.log(res);--}}
+              {{--if(res.code==1){--}}
+               {{--location.href="{{url('/')}}";--}}
+              {{--}--}}
+            {{--},--}}
+            {{--'json'--}}
+        {{--); --}}
+        {{--return false;--}}
+    {{--})--}}
+  {{--});--}}
+{{--</script>--}}
