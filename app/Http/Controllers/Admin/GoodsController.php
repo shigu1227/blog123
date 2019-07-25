@@ -10,7 +10,7 @@ class GoodsController extends Controller
 {
     public function add()
     {
-        return view('goodscontroller/add');
+        return view('goodscontroller.add');
     }
     public function add_do(Request $request)
     {
@@ -43,7 +43,7 @@ class GoodsController extends Controller
         //分页
         $pagesize=config('app.pageSize');
         $data = DB::table('Goods')->where($where)->paginate($pagesize);
-        return view('goodscontroller/index',['data'=>$data,'keywords'=>$keywords]);
+        return view('goodscontroller.index',['data'=>$data,'keywords'=>$keywords]);
     }
 
     public function del(Request $request)
@@ -75,7 +75,7 @@ class GoodsController extends Controller
         }
         $res=DB::table('Goods')->where(['goods_id'=>$goods_id])->update($data);
         if($res){
-            return redirect('admin/goods/index');
+            return redirect('admin.goods.index');
         }
     }
 }

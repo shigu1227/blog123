@@ -10,12 +10,12 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('indexcontroller/index');
+        return view('indexcontroller.index');
     }
 
     public function add()
     {
-        return view('indexcontroller/add');
+        return view('indexcontroller.add');
     }
     public function add_do(Request $request)
     {
@@ -47,7 +47,7 @@ class IndexController extends Controller
         //分页
         $pagesize=config('app.pageSize');
         $data = DB::table('User')->where($where)->paginate($pagesize);
-        return view('indexcontroller/add_index',['data'=>$data,'keywords'=>$keywords]);
+        return view('indexcontroller.add_index',['data'=>$data,'keywords'=>$keywords]);
     }
 
     public function del(Request $request)
@@ -55,7 +55,7 @@ class IndexController extends Controller
         $data = request() -> all();
         $q = DB::table('User')->where('id','=',$data['id'])->delete();
         if($q){
-            return redirect('admin/add_index');
+            return redirect('admin.add_index');
         }else{
             return redirect('删除失败','add_index');
         }
@@ -64,7 +64,7 @@ class IndexController extends Controller
     public function edit($id)
     {
         $data = DB::table('User')->where(['id'=>$id])->first();
-        return view('indexcontroller/edit',compact('data'));
+        return view('indexcontroller.edit',compact('data'));
     }
     public function update(Request $request)
     {
@@ -72,7 +72,7 @@ class IndexController extends Controller
         $id=request()->id;
         $a = DB::table('User')->where(['id'=>$id])->update($data);
         if($a){
-            return redirect('admin/add_index');
+            return redirect('admin.add_index');
         }
     }
 }

@@ -22,7 +22,7 @@ class IndexController extends Controller
             // dd($data);
         }
         $session=$request->session()->get('users');
-        return view('index/index',compact('data','session'));
+        return view('index.index',compact('data','session'));
    }
 
    //商品详情页
@@ -39,7 +39,7 @@ class IndexController extends Controller
             $data[$k]->goods_big_pic = ltrim($v->goods_big_pic, '|');
         }
       // echo "1111";
-      return view('index/proinfo',['data'=>$data]);
+      return view('index.proinfo',['data'=>$data]);
    }
 
    //加入购物车
@@ -93,7 +93,7 @@ class IndexController extends Controller
            $total+=$v->goods_markprice;
 //            dd($total);die;
        }
-      return view('index/cart',['data'=>$data,'total'=> number_format($total,2)]);
+      return view('index.cart',['data'=>$data,'total'=> number_format($total,2)]);
    }
 
    //删除购物车单条数据
@@ -159,6 +159,6 @@ class IndexController extends Controller
             ->where('user_id',$session)
             ->orderBy('is_default')
             ->get();
-        return view('index/checkout',compact('data','address','price'));
+        return view('index.checkout',compact('data','address','price'));
     }
 }

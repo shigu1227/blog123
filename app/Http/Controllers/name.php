@@ -33,15 +33,15 @@ public function index(){
         return "<script>window.location.href='/name/login',alert('您还未登陆')</script>";
     }
     $data=DB::table("name")->get();
-    return view('name/index',['data'=>$data]);
+    return view('name.index',['data'=>$data]);
 
 }
 public function indexc(){
-    return view('name/indexc');
+    return view('name.indexc');
 }
 
 public function indexm(){
-    return view('name/indexm');
+    return view('name.indexm');
 }
 //添加车库
     public function savec(Request $request){
