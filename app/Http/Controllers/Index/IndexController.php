@@ -22,7 +22,7 @@ class IndexController extends Controller
             // dd($data);
         }
         $session=$request->session()->get('users');
-        return view('index/index',compact('data','session'));
+        return view('Index.index',compact('data','session'));
    }
 
    //商品详情页
