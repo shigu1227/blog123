@@ -97,3 +97,20 @@ Route::any('name/delc','name@delc');
 Route::group(['middleware' => ['checklogin']], function () {
     Route::post('huo/update','HuoController@update');
 });
+
+//火车票
+Route::get('/ticket/add','TicketController@add');
+Route::post('/ticket/do_add','TicketController@do_add');
+Route::get('/ticket/index','TicketController@index');
+
+//管理员
+Route::get('strator_add','admin\StratorController@strator_add');
+Route::post('strator_add_do','admin\StratorController@strator_add_do');
+Route::get('strator_list','admin\StratorController@strator_list');
+Route::post('stratot_list_add','admin\StratorController@stratot_list_add');
+Route::post('strator_list_acc','admin\StratorController@strator_list_acc');
+Route::post('/strator_list_abb','admin\StratorController@strator_list_abb');
+Route::get('strator_list_fff','admin\StratorController@strator_list_fff');
+Route::post('strator_list_do','admin\StratorController@strator_list_do');
+Route::get('strator_list_list','admin\StratorController@strator_list_list');
+Route::post('/strator_list_shijuan','admin\StratorController@strator_list_shijuan');

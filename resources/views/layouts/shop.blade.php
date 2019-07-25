@@ -2,7 +2,7 @@
 <html lang="zxx">
 <head>
   <meta charset="UTF-8">
-  <title>爱情</title>
+  <title>爱   情</title>
   <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -54,7 +54,7 @@
   <div class="navbar-top">
     <!-- site brand  -->
     <div class="site-brand">
-      <a href="index.html"><h1>伤感商城</h1></a>
+      <a href="index.html"><h1>世故❤</h1></a>
     </div>
     <!-- end site brand  -->
     <div class="side-nav-panel-right">
@@ -89,7 +89,7 @@
  <div class="footer">
     <div class="container">
       <div class="about-us-foot">
-        <h6>悲伤商店</h6>
+        <h6>世  俗  ❤</h6>
         <p>是一种叫lorem ipsum dolor sit amet的酒，是一种圣洁的酒。</p>
       </div>
       <div class="social-media">
@@ -100,7 +100,7 @@
         <a href=""><i class="fa fa-instagram"></i></a>
       </div>
       <div class="copyright">
-        <span>百分·2017版权所有</span>
+        <span>百分·2019版权所有</span>
     </div>
     </div>
   </div>
